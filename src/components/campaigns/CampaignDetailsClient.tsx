@@ -77,7 +77,7 @@ export default function CampaignDetailsClient({ campaign }: { campaign: Campaign
       {/* Left Column */}
       <div className="lg:col-span-2 space-y-8">
         <div>
-          <h1 className="text-4xl md:text-5xl font-bold font-headline text-foreground -mt-24 relative text-white shadow-2xl p-4 bg-black/10 rounded-lg backdrop-blur-sm">
+          <h1 className="text-4xl md:text-5xl font-bold font-headline text-foreground">
             {campaign.name}
           </h1>
           <div className="mt-4 flex items-center gap-2 text-sm text-muted-foreground">
