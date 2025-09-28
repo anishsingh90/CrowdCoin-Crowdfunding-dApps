@@ -9,11 +9,10 @@ import {
 import { Progress } from '@/components/ui/progress';
 import { Campaign, CampaignState } from '@/lib/types';
 import { formatEther, timeLeft } from '@/lib/utils';
-import { Clock, Target, Users, CheckCircle, XCircle } from 'lucide-react';
+import { Clock, Users, CheckCircle, XCircle } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '../ui/button';
-import type { ImagePlaceholder } from '@/lib/placeholder-images';
 import { Badge } from '../ui/badge';
 
 const StateBadge = ({ state }: { state: CampaignState }) => {
@@ -45,23 +44,29 @@ const StateBadge = ({ state }: { state: CampaignState }) => {
 
 export default function CampaignCard({
   campaign,
-  image,
 }: {
   campaign: Campaign;
-  image: ImagePlaceholder;
 }) {
   const progress = Math.min((campaign.currentAmount / campaign.goal) * 100, 100);
+  const imageUrl =
+    campaign.state === CampaignState.Active
+      ? '/Campaignlive.png'
+      : '/Campaignclose.png';
+  const imageAlt =
+    campaign.state === CampaignState.Active
+      ? 'Live campaign image'
+      : 'Closed campaign image';
 
   return (
     <Card className="flex flex-col overflow-hidden transition-all hover:shadow-lg">
       <CardHeader className="p-0">
         <div className="relative aspect-[3/2] w-full">
           <Image
-            src={image.imageUrl}
-            alt={image.description}
-            fill
+            src={imageUrl}
+            alt={imageAlt}
+            width={600}
+            height={400}
             className="object-cover"
-            data-ai-hint={image.imageHint}
           />
         </div>
         <div className="p-6 pb-2">

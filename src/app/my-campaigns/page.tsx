@@ -8,7 +8,6 @@ import type { Campaign } from '@/lib/types';
 import { useWallet } from '@/hooks/use-wallet';
 import Link from 'next/link';
 import { Skeleton } from '@/components/ui/skeleton';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 function CampaignsSkeleton() {
   return (
@@ -70,11 +69,10 @@ export default function MyCampaignsPage() {
 
       {address && !isLoading && campaigns.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {campaigns.map((campaign, index) => (
+          {campaigns.map((campaign) => (
             <CampaignCard
               key={campaign.campaignAddress}
               campaign={campaign}
-              image={PlaceHolderImages[index % PlaceHolderImages.length]}
             />
           ))}
         </div>

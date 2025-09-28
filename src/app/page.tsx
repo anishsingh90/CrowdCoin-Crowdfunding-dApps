@@ -1,7 +1,6 @@
 import CampaignCard from '@/components/campaigns/CampaignCard';
 import { Button } from '@/components/ui/button';
 import { getAllCampaigns } from '@/lib/campaigns';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import Link from 'next/link';
 
 export default async function Home() {
@@ -20,11 +19,10 @@ export default async function Home() {
 
       {campaigns.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {campaigns.map((campaign, index) => (
+          {campaigns.map((campaign) => (
             <CampaignCard
               key={campaign.campaignAddress}
               campaign={campaign}
-              image={PlaceHolderImages[index % PlaceHolderImages.length]}
             />
           ))}
         </div>
