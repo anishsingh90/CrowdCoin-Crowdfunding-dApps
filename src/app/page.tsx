@@ -32,7 +32,7 @@ export default async function Home() {
             No Campaigns Yet
           </h2>
           <p className="text-muted-foreground mb-6">
-            Be the first to start a new crowdfunding journey on CrowdCoin.
+            Be the first to start a new crowdfunding journey on DecentraX.
           </p>
           <Button asChild>
             <Link href="/create">Create Your First Campaign</Link>

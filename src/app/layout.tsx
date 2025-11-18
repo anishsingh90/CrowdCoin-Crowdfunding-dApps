@@ -6,7 +6,7 @@ import Header from '@/components/layout/Header';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'CrowdCoin',
+  title: 'DecentraX',
   description: 'Decentralized Crowdfunding Platform',
 };
 

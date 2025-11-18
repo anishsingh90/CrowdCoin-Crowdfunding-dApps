@@ -27,7 +27,7 @@ export default function Header() {
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Logo />
-            <span className="font-bold font-headline">CrowdCoin</span>
+            <span className="font-bold font-headline">DecentraX</span>
           </Link>
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
             {navLinks.map((link) => (
